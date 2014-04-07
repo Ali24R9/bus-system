@@ -1,0 +1,11 @@
+<h1> Station <%= @station.station_name %></h1>
+
+<p>Bus lines that go to this station :</p>
+
+
+</br>
+<%= link_to 'Edit', edit_station_path(@station), :class => 'btn btn-success' %>
+<%= link_to 'Delete', station_path(@station),
+                      :line => "You sure?",
+                      :method => "delete",
+                      :class => "btn btn-danger" %>

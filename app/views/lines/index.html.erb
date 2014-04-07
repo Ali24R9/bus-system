@@ -1,5 +1,28 @@
-<h1>Does this work?</h1>
 
+<h1>Create a Station</h1>
+<% @stations.each do |station| %>
+  <%= link_to "#{station.station_name}", station_path(station) %></br>
+<% end %>
+
+<%= content_for(:title, "New Station | Bus Timetable") %>
+
+<%= render './stations/form' %>
+
+<p>----------------------------------------------------------------</p>
+
+<h1>Create a Stop</h1>
+
+<% @stops.each do |stop| %>
+  <%= link_to "#{stop.id}", stop_path(stop) %></br>
+<% end %>
+
+<%= content_for(:title, "New Stop | Bus Timetable") %>
+
+<%= render './stops/form' %>
+
+<p>----------------------------------------------------------------</p>
+
+<h1>Create a Line</h1>
 <% @lines.each do |line| %>
 <%= link_to "#{line.line_number}", line_path(line) %></br>
 <% end %>
@@ -7,3 +30,5 @@
 <%= content_for(:title, "New line | Bus Timetable") %>
 
 <%= render 'form' %>
+
+

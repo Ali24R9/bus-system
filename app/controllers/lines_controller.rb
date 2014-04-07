@@ -3,11 +3,15 @@ class LinesController < ApplicationController
   def index
     @lines = Line.all
     @line = Line.new
+    @stations = Station.all
+    @station = Station.new
+    @stop = Stop.new
+    @stops = Stop.all
   end
 
 
   def create
-    @line = Line.new(line_params)
+    @line = Line.create(line_params)
     if @line.save
       flash[:notice] = "Bus line created."
       redirect_to('/lines')
@@ -18,6 +22,7 @@ class LinesController < ApplicationController
 
   def show
     @line = Line.find(params[:id])
+    @stops = @line.stops
   end
 
   def edit
