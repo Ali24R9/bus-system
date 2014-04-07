@@ -1,5 +1,9 @@
 <h1>Does this work?</h1>
 
+<% @lines.each do |line| %>
+<%= link_to "#{line.line_number}", line_path(line) %></br>
+<% end %>
+
 <%= content_for(:title, "New line | Bus Timetable") %>
 
-# <%= render 'form' %>
+<%= render 'form' %>

@@ -11,3 +11,15 @@
  *= require_self
  *= require_tree .
  */
+
+
+ .container{
+/*   background: url('bus.jpg') no-repeat center center;
+
+*/
+   color:white;
+   background-color: black;
+   background-size: cover;
+   border:black solid 1px;
+   padding:100px 120px;
+ }
