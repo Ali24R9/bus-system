@@ -1,4 +1,4 @@
 class Stop < ActiveRecord::Base
-  belongs_to :lines
-  belongs_to :stations
+  belongs_to :line
+  belongs_to :station
 end
