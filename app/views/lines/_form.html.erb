@@ -5,5 +5,11 @@
     <%= f.label :line_number %>
     <%= f.text_field :line_number %>
   </div>
+  <%= form_for(@stop) do |f| %>
+    <div class="form-group">
+      <%= f.label "Stop" %>
+      <%= f.collection_select :station_id, Station.all, :id, :station_name %>
+    </div>
+   <% end %>
   <%= f.submit(:class => 'btn btn-success') %>
 <% end %>

@@ -10,17 +10,7 @@
 
 <p>----------------------------------------------------------------</p>
 
-<h1>Create a Stop</h1>
 
-<% @stops.each do |stop| %>
-  <%= link_to "#{stop.id}", stop_path(stop) %></br>
-<% end %>
-
-<%= content_for(:title, "New Stop | Bus Timetable") %>
-
-<%= render './stops/form' %>
-
-<p>----------------------------------------------------------------</p>
 
 <h1>Create a Line</h1>
 <% @lines.each do |line| %>

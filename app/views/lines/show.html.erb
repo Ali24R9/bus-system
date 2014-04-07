@@ -1,8 +1,15 @@
 <h1>Bus #<%= @line.line_number %></h1>
 
-Stations :
+<h2>Stations that stop at Line <%= @line.line_number %></h2>
 
+<ul>
+<% @line.show_stops.each do |station| %>
+ <li> <%= station %></li>
+<% end %>
+</ul>
 </br>
+<%= link_to 'Back', lines_path(@line), :class => 'btn btn-primary' %>
+
 <%= link_to "Edit", edit_line_path(@line), :class => 'btn btn-success' %>
 <%= link_to "Delete", line_path(@line),
                       :line => "You sure?",

@@ -12,6 +12,14 @@ class LinesController < ApplicationController
 
   def create
     @line = Line.create(line_params)
+    @line.stops.create(stop_params)
+
+    if @stop.save
+      flash[:notice] ="Stop created"
+      redirect_to('/stops')
+    else
+      render('/stops')
+    end
     if @line.save
       flash[:notice] = "Bus line created."
       redirect_to('/lines')

@@ -1,9 +1,15 @@
 <h1> Station <%= @station.station_name %></h1>
 
 <p>Bus lines that go to this station :</p>
+<% @station.show_lines.each do |line| %>
+  <li><%= line %></li>
+  <% end %>
+</ul>
+</br>
 
 
 </br>
+<%= link_to 'Back', lines_path(@line), :class => 'btn btn-primary' %>
 <%= link_to 'Edit', edit_station_path(@station), :class => 'btn btn-success' %>
 <%= link_to 'Delete', station_path(@station),
                       :line => "You sure?",
